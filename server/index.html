@@ -77,7 +77,11 @@
 				console.log('up')
 			})
 			setInterval(function(){
-				var outputEl	= document.getElementById('result');
+        var height = document.getElementById('container').clientHeight;
+        var width = document.getElementById('container').clientWidth;
+        console.log("isUp",joystick.up());
+        console.log("isRight",joystick.right());
+        var outputEl	= document.getElementById('result');
 				outputEl.innerHTML	= '<b>Result:</b> '
 					+ ' dx:'+joystick.deltaX()
 					+ ' dy:'+joystick.deltaY()
