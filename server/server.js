@@ -12,9 +12,9 @@ app.get('/', function(req, res){
     socket.on('disconnect', function(){
         console.log('user disconnected');
       });
-      socket.on('chat message', function(msg){
-        console.log('message: ' + msg);
-        io.emit('response', 'response:' + msg);
+      socket.on('REQUEST_MOVE', function(movement){
+        console.log('Sending: ' + movement.speed + ":" + movement.direction);
+        io.emit('REQUEST_TANK', movement);
       });
   });
 
