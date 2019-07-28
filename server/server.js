@@ -6,6 +6,9 @@ var io = require('socket.io')(http);
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
   });
+  app.get('/joystick.js', function(req, res){
+    res.sendFile(__dirname + '/virtualjoystick.js');
+  });
 
   io.on('connection', function(socket){
     console.log('a user connected');
