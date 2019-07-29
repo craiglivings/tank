@@ -1,5 +1,5 @@
-const socket = io();
-const velcoity = { left: 0, right: 0 };
+const socket = io('https://cl-tank.herokuapp.com');
+let velocity = { left: 0, right: 0 };
 
 socket.emit('REQUEST_MOVE', { left: 10, right: 10 });
 socket.on('REQUEST_TANK', data => {
