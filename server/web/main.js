@@ -1,12 +1,17 @@
 const socket = io();
+const velcoity = { left: 0, right: 0 };
+
 socket.emit('REQUEST_MOVE', { left: 10, right: 10 });
 socket.on('REQUEST_TANK', data => {
     const leftTarget = 'left-track-' + (data.left > 0 ? 'top' : 'bottom');
     const rightTarget = 'right-track-' + (data.right > 0 ? 'top' : 'bottom');
     //console.log(data);
-    resetBars();
-    document.getElementById(leftTarget).style.height = Math.abs(data.left * 10) + '%';
-    document.getElementById(rightTarget).style.height = Math.abs(data.right * 10) + '%';
+    if (velocity.left !== data.left && velocity.right !== data.right) {
+        velocity = data;
+        resetBars();
+        document.getElementById(leftTarget).style.height = Math.abs(data.left * 10) + '%';
+        document.getElementById(rightTarget).style.height = Math.abs(data.right * 10) + '%';
+    }
 });
 
 const resetBars = () => {
