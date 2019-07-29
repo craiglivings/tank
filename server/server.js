@@ -11,9 +11,14 @@ io.on('connection', function(socket) {
     socket.on('disconnect', function() {
         console.log('A client disconnected');
     });
+
     socket.on('REQUEST_MOVE', function(movement) {
         console.log('Sending: ' + movement.speed + ':' + movement.direction);
         io.emit('REQUEST_TANK', transform(movement.direction, movement.speed));
+    });
+
+    socket.on('disconnect', function() {
+        io.emit('REQUEST_TANK', { left: 0, right: 0 });
     });
 });
 
