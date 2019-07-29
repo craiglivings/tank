@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+}
+
+.track {
+    flex-basis: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.power {
+    flex: 1;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.top {
+    align-items: flex-end;
+}
+
+.powerbar {
+    background-color: white;
+    width: 10px;
+    height: 50%;
+}
+
+#joystick {
+    flex-grow: 1;
+    height: 100vh;
+    background-image: radial-gradient(at 60% bottom, yellow, red);
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.range {
+    -webkit-appearance: slider-vertical;
+    width: 20px;
+    height: 100px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Tank</title>
+        <script src="virtualjoystick.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div class=" track">
+                <div class="top power">
+                    <div id="left-track-top" class="powerbar"></div>
+                </div>
+                <div class=" power">
+                    <div id="left-track-bottom" class="powerbar"></div>
+                </div>
+            </div>
+            <div id="joystick"></div>
+            <div class=" track">
+                <div class="top power">
+                    <div id="right-track-top" class="powerbar"></div>
+                </div>
+                <div class=" power">
+                    <div id="right-track-bottom" class="powerbar"></div>
+                </div>
+            </div>
+        </div>
+
+        <p>Speed: <span id="speed"></span></p>
+        <p>Direction: <span id="direction"></span></p>
+
+        <script src="main.js"></script>
+    </body>
+</html>
