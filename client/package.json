@@ -1,14 +1,20 @@
 {
-    "name": "tank-client",
-    "version": "1.0.0",
-    "main": "tank.js",
-    "license": "MIT",
-    "dependencies": {
-        "nodemon": "^1.19.1",
-        "socket.io": "^2.2.0",
-        "socket.io-client": "^2.2.0"
-    },
-    "scripts": {
-        "start": "nodemon tank.js"
-    }
+  "name": "tank-client",
+  "version": "1.0.0",
+  "main": "tank.js",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^1.19.1",
+    "pigpio": "^1.2.3",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
+  },
+  "scripts": {
+    "start": "concurrently \"tsc tank.ts --watch\" \"nodemon tank.js\"",
+    "compile": "tsc tank.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "typescript": "^3.5.3"
+  }
 }
